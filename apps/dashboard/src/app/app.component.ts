@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@cat-facts/api-interfaces';
 
 @Component({
   selector: 'cat-facts-root',
@@ -8,6 +6,9 @@ import { Message } from '@cat-facts/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title= 'Cat Facts';
+  links= [
+    {path: '', icon: 'home', title: 'Home'},
+    {path: 'facts', icon: 'view_list', title: 'Cat Facts'}
+  ]
 }

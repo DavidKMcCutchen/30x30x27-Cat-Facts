@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-50" layout="row" layout-align="center center">
+      <cat-facts-fact-list
+        [facts]="allFacts$ | async"
+        (selected)="selectFact($event)"
+        (deleted)="deleteFact($event)"
+        (factViewed)="viewFact($event)"
+      ></cat-facts-fact-list>
+    </div>
+    <div class="col-50" layout="row" layout-align="center center">
+      <cat-facts-fact-details
+        [fact]="selectedFact$ | async"
+        (saved)="saveFact($event)"
+        (cancelled)="resetFact()"
+        [form]="form"
+      ></cat-facts-fact-details>
+    </div>
+  </div>
